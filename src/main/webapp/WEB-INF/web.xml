@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmln:xsi="http://wwww.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml">
+
+	<display-name>Wechat</display-name>
+
+	<servlet>
+		<servlet-name>WechatServlet</servlet-name>
+		<servlet-class>cn.edu.sdut.WechatServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WechatServlet</servlet-name>
+		<url-pattern>/wx.do</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
