@@ -9,11 +9,11 @@ import java.util.Arrays;
  * 值的逻辑检验
  */
 public class CheckUtil {
-	private static final String token = "yueziyou";
+	private static final String token = "cnsoftbei";
 
 	public static boolean checkSignature(String signature, String timestamp, String nonce) {
 		String[] arr = new String[] { token, timestamp, nonce };
-		// 排序
+		// 将三个字符串进行排序
 		Arrays.sort(arr);
 
 		// 生成字符串

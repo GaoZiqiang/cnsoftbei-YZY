@@ -25,5 +25,7 @@ public class WeChatServlet extends HttpServlet {
 		if (CheckUtil.checkSignature(signature, timestamp, nonce)) {
 			out.println(echostr);
 		}
+		out.close();
+		out = null;
 	}
 }
