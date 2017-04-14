@@ -28,4 +28,7 @@ public class WeChatServlet extends HttpServlet {
 		out.close();
 		out = null;
 	}
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+		
+	}
 }
