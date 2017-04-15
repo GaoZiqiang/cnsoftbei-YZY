@@ -26,6 +26,18 @@
 			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
 		</dependency>
+		<!-- Xstream 依赖配置 -->
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		<!-- 本地jar包 wx4j框架 -->
+		<dependency>
+			<groupId>cn.edu.sdut.softlab.wx4j</groupId>
+			<artifactId>wx4j</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>YZYWeiXin</finalName>
