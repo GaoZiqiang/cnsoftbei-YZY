@@ -13,12 +13,18 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
+import com.thoughtworks.xstream.XStream;
+
+import cn.edu.sdut.po.TextMessage;
+
 public class MessageUtil {
 	/**
 	 * 
 	 * xml转换成Map
 	 * */
 	public static Map<String, String> xmlToMap(HttpServletRequest request) throws IOException, DocumentException {
+		request.setCharacterEncoding("UTF-8");
+
 		Map<String, String> map = new HashMap<String, String>();
 		SAXReader reader = new SAXReader();
 
@@ -35,8 +41,12 @@ public class MessageUtil {
 		ins.close();
 		return map;
 	}
-	
+	/**
+	 * text转换成xml
+	 * */
 	public static String textMessageToXml(TextMessage textMessage) {
-		
+		XStream xstream = new XStream();
+		xstream.alias("xml", textMessage.getClass());
+		return xstream.toXML(textMessage);
 	}
 }
