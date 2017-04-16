@@ -1,4 +1,4 @@
-package cn.edu.sdut.util;
+package cn.edu.sdut.service;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
