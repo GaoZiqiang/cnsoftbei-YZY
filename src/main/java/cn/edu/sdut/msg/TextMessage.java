@@ -1,9 +1,9 @@
-package cn.edu.sdut.po;
+package cn.edu.sdut.msg;
 
 public class TextMessage {
 	private String ToUserName;
 	private String FromUserName;
-	private long CreateTime;
+	private long CreateTime;// 注意此处CreateTime的类型
 	private String MsgType;
 	private String Content;
 	private String MsgId;
