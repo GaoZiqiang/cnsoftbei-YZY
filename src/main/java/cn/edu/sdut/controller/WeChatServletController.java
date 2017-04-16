@@ -1,4 +1,4 @@
-package cn.edu.sdut.servlet;
+package cn.edu.sdut.controller;
 
 /**
 *获取值
@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.dom4j.DocumentException;
 
-import cn.edu.sdut.po.TextMessage;
-import cn.edu.sdut.util.CheckUtil;
-import cn.edu.sdut.util.MessageUtil;
+import cn.edu.sdut.msg.TextMessage;
+import cn.edu.sdut.service.CheckUtil;
+import cn.edu.sdut.service.MessageUtil;
 
-public class WeChatServlet extends HttpServlet {
+public class WeChatServletController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String signature = req.getParameter("signature");
 		String timestamp = req.getParameter("timestamp");
@@ -42,6 +42,7 @@ public class WeChatServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();// 获取resq的数据流
 		Map<String, String> map;
 		try {
+			// 获取来自client的消息
 			map = MessageUtil.xmlToMap(req);
 			String fromUserName = map.get("FromUserName");
 			String toUserName = map.get("ToUserName");
@@ -55,8 +56,13 @@ public class WeChatServlet extends HttpServlet {
 				text.setToUserName(fromUserName);
 				text.setMsgType("text");
 				text.setCreateTime(new Date().getTime());
-				text.setContent("您发送的消息是:" + content);
-				message = MessageUtil.textMessageToXml(text);// message来接收
+				if (content.equals("高晗")) {
+					text.setContent("高晗 is a good boy");
+				} else {
+					text.setContent("您发送的消息是:" + content);
+				}
+
+				message = MessageUtil.msgToXml(text);// message来接收,为什么不行?
 			}
 			out.println(message);
 		} catch (DocumentException e) {
