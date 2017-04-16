@@ -6,7 +6,7 @@
 
 	<servlet>
 		<servlet-name>WeChatServlet</servlet-name>
-		<servlet-class>cn.edu.sdut.servlet.WeChatServlet</servlet-class>
+		<servlet-class>cn.edu.sdut.controller.WeChatServletController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
