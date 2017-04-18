@@ -1,0 +1,5 @@
+﻿-- Column: barcode
+
+-- ALTER TABLE public.stock_in DROP COLUMN barcode;
+
+ALTER TABLE public.stock_in ADD COLUMN barcode character varying(13);
