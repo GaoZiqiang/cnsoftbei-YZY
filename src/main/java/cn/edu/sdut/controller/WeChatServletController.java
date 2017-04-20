@@ -15,9 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.dom4j.DocumentException;
 
-import cn.edu.sdut.msg.TextMessage;
 import cn.edu.sdut.service.CheckUtil;
-import cn.edu.sdut.service.MessageUtil;
+import cn.edu.sdut.service.CoreService;
 
 public class WeChatServletController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,41 +34,20 @@ public class WeChatServletController extends HttpServlet {
 		out = null;
 	}
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		// 设置一下相应的格式
-		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
-		PrintWriter out = resp.getWriter();// 获取resq的数据流
-		Map<String, String> map;
-		try {
-			// 获取来自client的消息
-			map = MessageUtil.xmlToMap(req);
-			String fromUserName = map.get("FromUserName");
-			String toUserName = map.get("ToUserName");
-			String msgType = map.get("MsgType");
-			String content = map.get("Content");
-
-			String message = null;
-			if ("text".equals(msgType)) {
-				TextMessage text = new TextMessage();
-				text.setFromUserName(toUserName);
-				text.setToUserName(fromUserName);
-				text.setMsgType("text");
-				text.setCreateTime(new Date().getTime());
-				if (content.equals("高晗")) {
-					text.setContent("高晗 is a good boy");
-				} else {
-					text.setContent("您发送的消息是:" + content);
-				}
-
-				message = MessageUtil.msgToXml(text);// message来接收,为什么不行?
-			}
-			out.println(message);
-		} catch (DocumentException e) {
-			e.printStackTrace();
-		} finally {
-			out.close();
-		}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		 // 将请求、响应的编码均设置为UTF-8（防止中文乱码）  
+        request.setCharacterEncoding("UTF-8");  
+        response.setCharacterEncoding("UTF-8");  
+        PrintWriter out = response.getWriter();// 获取resq的数据流
+  
+        // 调用核心业务类接收消息、处理消息  
+        String respMessage = CoreService.processRequest(request);  
+          
+        // 响应消息  
+        
+        out.print(respMessage);  
+        out.close();  
+   
 
 	}
 }

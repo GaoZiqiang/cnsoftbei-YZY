@@ -3,7 +3,7 @@ package cn.edu.sdut.msg;
 public class ImageMessage {
 	private String ToUserName;
 	private String FromUserName;
-	private String CreateTime;
+	private long CreateTime;
 	private String MsgType;
 	private String PicUrl;
 	private String MediaId;
@@ -25,11 +25,11 @@ public class ImageMessage {
 		FromUserName = fromUserName;
 	}
 
-	public String getCreateTime() {
+	public long getCreateTime() {
 		return CreateTime;
 	}
 
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(long createTime) {
 		CreateTime = createTime;
 	}
 

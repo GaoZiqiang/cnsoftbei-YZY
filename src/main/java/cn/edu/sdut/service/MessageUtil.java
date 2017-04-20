@@ -17,6 +17,7 @@ import com.thoughtworks.xstream.XStream;
 
 import cn.edu.sdut.msg.TextMessage;
 
+
 public class MessageUtil {
 	/**
 	 * 
@@ -45,7 +46,7 @@ public class MessageUtil {
 	 * mesaage转换成xml
 	 * @param <T>
 	 */
-	public static <T> String msgToXml(Class<T> message) {
+	public static String msgToXml(TextMessage message) {
 		XStream xstream = new XStream();
 		xstream.alias("xml", message.getClass());
 		return xstream.toXML(message);
