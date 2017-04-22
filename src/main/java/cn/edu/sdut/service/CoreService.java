@@ -31,8 +31,17 @@ public class CoreService {
 			String msgType = map.get("MsgType");
 			String content = map.get("Content");
 
-			if ("text".equals(msgType)) {
-				TextMessage text = new TextMessage();
+			if (MessageUtil.MESSAGE_TEXT.equals(msgType)) {
+				
+				if("1".equals(content)) {
+					message = MessageUtil.initText(toUserName,fromUserName,MessageUtil.firstMenu());
+				}else if("2".equals(content)) {
+					message = MessageUtil.initText(toUserName,fromUserName,MessageUtil.secondMenu());
+				}else if("?".equals(content) || "？".equals(content)) {
+					message = MessageUtil.initText(toUserName,fromUserName,MessageUtil.menuText());
+				}
+				//TextMessage text = new TextMessage();
+				/*TextMessage text = new TextMessage();
 				text.setFromUserName(toUserName);
 				text.setToUserName(fromUserName);
 				text.setMsgType("text");
@@ -41,9 +50,14 @@ public class CoreService {
 					text.setContent("高晗 is a good boy");
 				} else {
 					text.setContent("您发送的消息是:" + content);
-				}
+				}*/
 
-				message = MessageUtil.msgToXml(text);// message来接收,为什么不行?
+				//message = MessageUtil.msgToXml(text);// message来接收,为什么不行?
+			}else if(MessageUtil.MESSAGE_EVENT.equals(msgType)) {
+				String eventType = map.get("Event");
+				if(MessageUtil.MESSAGE_SUBSCRIBE.equals(eventType)) {
+					message = MessageUtil.initText(toUserName,fromUserName,MessageUtil.menuText());
+				}
 			}
 
 		} catch (DocumentException e) {
@@ -53,7 +67,7 @@ public class CoreService {
 	}
 	
 	//图片消息处理
-	public static String imageMsgDispatcher(HttpServletRequest request) {
+	/*public static String imageMsgDispatcher(HttpServletRequest request) {
 		String message = null;
 		Map<String, String> map;
 		try {
@@ -88,5 +102,5 @@ public class CoreService {
 			e.printStackTrace();
 		}
 		return message;
-	}
+	}*/
 }
