@@ -8,14 +8,14 @@
             Persistence unit for YZYWeiXin
         </description>
 
-		<jta-data-source>java:/jboss/labDS</jta-data-source>
+		<jta-data-source>java:/jdbc/YZYWeiXinDS</jta-data-source>
 		<!-- 持久化类 -->
 		<class>cn.edu.sdut.model.Account</class>
 		<class>cn.edu.sdut.model.Book</class>
 		<class>cn.edu.sdut.model.BorrowReturnRecord</class>
 		<class>cn.edu.sdut.model.Category</class>
 		<class>cn.edu.sdut.model.StockIn</class>
-		<class>cn.edu.sdut.Stuff</class>
+		<class>cn.edu.sdut.model.Stuff</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<properties>
