@@ -38,6 +38,17 @@
 			<artifactId>wx4j</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<!-- Hibernate support -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.6.10.Final</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>YZYWeiXin</finalName>
