@@ -6,14 +6,29 @@
 
 	<servlet>
 		<servlet-name>WeChatServlet</servlet-name>
-		<servlet-class>cn.edu.sdut.controller.WeChatServletController</servlet-class>
+		<servlet-class>cn.edu.sdut.controller.WeChatServletController
+		</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>WeChatServlet</servlet-name>
 		<url-pattern>/wx.do</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
+
 </web-app>

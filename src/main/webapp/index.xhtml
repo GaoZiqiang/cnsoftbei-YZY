@@ -1,6 +1,21 @@
-<html>
-<body>
-<h2>Hello World!</h2>
-</body>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+</h:head>
+<h:body>
+    <h1>DBConnection Demo</h1>
+    <h:form>
+输入姓名:<h:inputText value="#{controller.testBook.name}" />
+        <br />
+        <h:commandButton value="登录" action="#{controller.connectDB}" />
+    </h:form>
+</h:body>
 </html>
-	

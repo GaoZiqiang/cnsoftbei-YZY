@@ -103,7 +103,6 @@ public class MessageUtil {
 		buffer.append("1.课程介绍\n");
 		buffer.append("2.慕课网介绍\n");
 		buffer.append("回复?调出此菜单");
-
 		return buffer.toString();
 
 	}
