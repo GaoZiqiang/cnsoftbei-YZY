@@ -1,0 +1,25 @@
+<Context path="/YZYWeiXin" docBase="/home/gaoziqiang/YZYWeiXin" debug="0" privileged="true">
+
+<Resource
+
+        name="jdbc/YZYWeiXinDS"
+
+        auth="Container"
+
+        type="javax.sql.DataSource"
+
+        driverClassName="org.postgresql.Driver"
+
+        url="jdbc:postgresql://localhost:5432/YZY"
+
+        username="postgres"
+
+        password=""
+
+        maxIdle="2"
+
+        maxWait="5000"
+
+        maxActive="4"/>
+
+　</Context>
