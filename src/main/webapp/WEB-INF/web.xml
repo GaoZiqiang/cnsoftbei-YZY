@@ -4,7 +4,7 @@
 
 	<display-name>Wechat</display-name>
 
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>WeChatServlet</servlet-name>
 		<servlet-class>cn.edu.sdut.controller.WeChatServletController
 		</servlet-class>
@@ -13,7 +13,7 @@
 	<servlet-mapping>
 		<servlet-name>WeChatServlet</servlet-name>
 		<url-pattern>/wx.do</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	
 	<!-- JSF的核心控制器 FacesServlet -->
 	<servlet>
@@ -28,11 +28,11 @@
 	</servlet-mapping>
 	<context-param>
 		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
-		<param-value>.jsp</param-value>
+		<param-value>.xhtml</param-value>
 	</context-param>
 	
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
 
 </web-app>
