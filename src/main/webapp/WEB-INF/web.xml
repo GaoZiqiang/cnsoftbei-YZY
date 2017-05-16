@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmln:xsi="http://wwww.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml">
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+        http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 	<display-name>Wechat</display-name>
 
-	<!-- <servlet>
-		<servlet-name>WeChatServlet</servlet-name>
-		<servlet-class>cn.edu.sdut.controller.WeChatServletController
-		</servlet-class>
-	</servlet>
+	<!-- <servlet> <servlet-name>WeChatServlet</servlet-name> <servlet-class>cn.edu.sdut.controller.WeChatServletController 
+		</servlet-class> </servlet> <servlet-mapping> <servlet-name>WeChatServlet</servlet-name> 
+		<url-pattern>/wx.do</url-pattern> </servlet-mapping> -->
 
-	<servlet-mapping>
-		<servlet-name>WeChatServlet</servlet-name>
-		<url-pattern>/wx.do</url-pattern>
-	</servlet-mapping> -->
-	
 	<!-- JSF的核心控制器 FacesServlet -->
 	<servlet>
 		<servlet-name>FacesServlet</servlet-name>
@@ -30,7 +25,7 @@
 		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
 		<param-value>.xhtml</param-value>
 	</context-param>
-	
+
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>

@@ -15,6 +15,7 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
 	private String barcode;
@@ -31,7 +32,7 @@ public class Book implements Serializable {
 
 	//bi-directional many-to-one association to Book
 	@OneToMany(mappedBy="book")
-	private Set<Book> accounts;
+	private Set<Account> accounts;
 
 	//bi-directional many-to-one association to Category
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -108,11 +109,11 @@ public class Book implements Serializable {
 		this.writer = writer;
 	}
 
-	public Set<Book> getAccounts() {
+	public Set<Account> getAccounts() {
 		return this.accounts;
 	}
 
-	public void setAccounts(Set<Book> accounts) {
+	public void setAccounts(Set<Account> accounts) {
 		this.accounts = accounts;
 	}
 

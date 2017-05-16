@@ -3,13 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<!-- name可以自定义 -->
-	<persistence-unit name="yueziyou" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="YZYWeixin" transaction-type="RESOURCE_LOCAL">
 		<description>
             Persistence unit for YZYWeiXin
         </description>
 
-		<jta-data-source>java:/jdbc/YZYWeiXinDS</jta-data-source>
+		<jta-data-source>java:/jboss/YZYDS</jta-data-source>
 		<!-- 持久化类 -->
+		<!-- provedor/implementacao do JPA -->
+		
 		<class>cn.edu.sdut.model.Account</class>
 		<class>cn.edu.sdut.model.Book</class>
 		<class>cn.edu.sdut.model.BorrowReturnRecord</class>
