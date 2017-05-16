@@ -114,7 +114,7 @@
 		<finalName>YZYWeiXin</finalName>
 		<pluginManagement>
 			<plugins>
-				<plugin>
+			<!-- 	<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat6-maven-plugin</artifactId>
 					<version>2.0-SNAPSHOT</version>
@@ -131,6 +131,11 @@
 						<url>http://localhost:8080/manager/text</url>
 						<server>tomcat</server>
 					</configuration>
+				</plugin> -->
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>1.1.0.Alpha5</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
