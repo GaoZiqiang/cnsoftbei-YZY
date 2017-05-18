@@ -6,15 +6,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import cn.edu.sdut.model.Category;
+import cn.edu.sdut.model.Person;
 import cn.edu.sdut.model.Stuff;
 
 @RequestScoped
 @ManagedBean(name = "controller")
 public class DBController {
 
-	private Stuff newStuff;
-	private Category newCategory;
+	private Stuff newStuff = new Stuff();
+	// private Category newCategory;
+
 	public Stuff getNewStuff() {
 		return newStuff;
 	}
@@ -23,33 +24,40 @@ public class DBController {
 		this.newStuff = newStuff;
 	}
 
-	
+	// public Category getNewCategory() { return newCategory; }
 
-	public Category getNewCategory() {
-		return newCategory;
+	// public void setNewCategory(Category newCategory) { this.newCategory =
+	// newCategory; }
+
+	private Person newPerson = new Person();
+
+	public Person getNewPerson() {
+		return newPerson;
 	}
 
-	public void setNewCategory(Category newCategory) {
-		this.newCategory = newCategory;
+	public void setNewPerson(Person newPerson) {
+		this.newPerson = newPerson;
 	}
 
 	public void connectDB() {
 		System.out.println("start!");
 		EntityManagerFactory emf = null;
 		EntityManager em = null;
+
 		try {
-			emf = Persistence.createEntityManagerFactory("YZYWeixin");
+			emf = Persistence.createEntityManagerFactory("cnsoftbei-yzy");
 			em = emf.createEntityManager();
-			em.getTransaction().begin();
+			newStuff.setName("gaoziqiang");
 			System.out.println("打印输emf: " + emf.toString());
 			System.out.println("打印输em: " + em.toString());
-			System.out.println("打印输出newCategory: " + newCategory.toString());
+			em.getTransaction().begin();
+			// System.out.println("打印输出newCategory: " + newCategory.toString());
 			// newStuff.setName("gaoziqiang");
-			//newCategory.setName("gaoziqiang");
-			//newCategory.setBarcode("gaoziqiang");
-			// System.out.println("打印输出newStuff:" + newStuff.toString() +
+			// newCategory.setName("gaoziqiang");
+			// newCategory.setBarcode("gaoziqiang");
+			System.out.println("打印输出newPerson:" + newStuff.toString());
 			// "以及newStuff的name属性: " + newStuff.getName());
-			//em.persist(newCategory);
+			em.persist(newStuff);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
