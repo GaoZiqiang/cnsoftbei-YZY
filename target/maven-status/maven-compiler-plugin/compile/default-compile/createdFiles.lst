@@ -1,0 +1,8 @@
+cn/edu/sdut/model/Book.class
+cn/edu/sdut/model/Person.class
+cn/edu/sdut/model/Category.class
+cn/edu/sdut/model/Stuff.class
+cn/edu/sdut/model/BorrowReturnRecord.class
+cn/edu/sdut/model/Account.class
+cn/edu/sdut/model/StockIn.class
+cn/edu/sdut/controller/DBController.class
