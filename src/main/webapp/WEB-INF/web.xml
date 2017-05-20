@@ -6,14 +6,14 @@
 
 	<display-name>Wechat</display-name>
 
-	<!-- <servlet>
+	<servlet>
 		<servlet-name>WeChatServlet</servlet-name>
 		<servlet-class>cn.edu.sdut.controller.WeChatServletController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>WeChatServlet</servlet-name>
 		<url-pattern>/wx.do</url-pattern>
-	</servlet-mapping> -->
+	</servlet-mapping>
 
 	<!-- JSF的核心控制器 FacesServlet -->
 	<servlet>
