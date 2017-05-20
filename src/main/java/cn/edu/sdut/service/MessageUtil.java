@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
+import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.sun.messaging.bridge.service.jms.xml.JMSBridgeXMLConstant.Element;
 import com.thoughtworks.xstream.XStream;
 
 import cn.edu.sdut.msg.TextMessage;
