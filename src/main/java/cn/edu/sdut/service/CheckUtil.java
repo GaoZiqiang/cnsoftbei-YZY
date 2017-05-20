@@ -9,9 +9,14 @@ import java.util.Arrays;
  * 值的逻辑检验
  */
 public class CheckUtil {
-	private static final String token = "cnsoftbei";
+	private static final String token = "cnsoftbei2";
 
 	public static boolean checkSignature(String signature, String timestamp, String nonce) {
+		
+		//System.out.println("打印signature" + signature.toString());
+		System.out.println("打印timestamp" + timestamp.toString());
+		System.out.println("打印nonce" + nonce.toString());
+		
 		String[] arr = new String[] { token, timestamp, nonce };
 		// 将三个字符串进行排序
 		Arrays.sort(arr);
