@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 值的逻辑检验
  */
 public class CheckUtil {
-	private static final String token = "cnsoftbei2";
+	private static final String token = "cnsoftbei3";
 
 	public static boolean checkSignature(String signature, String timestamp, String nonce) {
 		
