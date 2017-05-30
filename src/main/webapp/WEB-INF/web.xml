@@ -7,12 +7,12 @@
 	<display-name>Wechat</display-name>
 
 	<servlet>
-		<servlet-name>WeChatServlet</servlet-name>
-		<servlet-class>cn.edu.sdut.controller.WeChatServletController</servlet-class>
+		<servlet-name>Servlet</servlet-name>
+		<servlet-class>cn.edu.sdut.controller.ServletController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>WeChatServlet</servlet-name>
-		<url-pattern>/wechat.do</url-pattern>
+		<servlet-name>Servlet</servlet-name>
+		<url-pattern>/test.do</url-pattern>
 	</servlet-mapping>
 
 	<!-- JSF的核心控制器 FacesServlet -->
