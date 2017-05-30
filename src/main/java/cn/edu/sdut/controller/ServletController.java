@@ -1,8 +1,5 @@
 package cn.edu.sdut.controller;
 
-/**
-*获取值
-*/
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -17,20 +14,20 @@ import cn.edu.sdut.msg.TextMessage;
 import cn.edu.sdut.service.CheckUtil;
 import cn.edu.sdut.service.MessageUtil;
 
-public class WeChatServletController extends HttpServlet {
+public class ServletController extends HttpServlet {
 	/**
-	 * 
+	 * 获取值
 	 */
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String signature = null;
-		//String signature = req.getParameter("signature");//该signature来自微信服务器
+		//String signature = null;
+		String signature = req.getParameter("signature");//该signature来自微信服务器
 		String timestamp = req.getParameter("timestamp");
 		String nonce = req.getParameter("nonce");
 		String echostr = req.getParameter("echostr");
 
-		//打印输出signature
+		// 打印输出signature
 		System.out.println("ServletController中signature:" + signature.toString());
 		System.out.println("ServletController中timestamp:" + timestamp.toString());
 		System.out.println("ServletController中nonce:" + nonce.toString());
@@ -38,7 +35,7 @@ public class WeChatServletController extends HttpServlet {
 		// 调用逻辑验证
 		PrintWriter out = resp.getWriter();
 		if (CheckUtil.checkSignature(signature, timestamp, nonce)) {
-			out.println(echostr);//返回微信服务器
+			out.println(echostr);// 返回微信服务器
 		}
 		out.close();
 		out = null;
@@ -47,14 +44,14 @@ public class WeChatServletController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		PrintWriter out = response.getWriter();
 		try {
-			Map<String,String> map = MessageUtil.xmlToMap(request);
+			Map<String, String> map = MessageUtil.xmlToMap(request);
 			String fromUserName = map.get("FromUserName");
 			String toUserName = map.get("ToUserName");
 			String msgType = map.get("MsgType");
 			String content = map.get("Content");
-			
+
 			String message = null;
-			if("text".equals(msgType)) {
+			if ("text".equals(msgType)) {
 				TextMessage text = new TextMessage();
 				text.setFromUserName(toUserName);
 				text.setToUserName(fromUserName);
@@ -66,11 +63,9 @@ public class WeChatServletController extends HttpServlet {
 			out.println(message);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			out.close();
 		}
-		
-   
 
 	}
 }
